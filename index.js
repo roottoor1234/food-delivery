@@ -2,7 +2,7 @@
 const WebSocket = require('ws');
 
 // Create a new WebSocket server instance, listening on port 8080
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocket.Server({ port: process.env.PORT || 8080 });
 
 // Initialize an array to store coordinates
 const coordinates = [];
