@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import {
   APIProvider,
@@ -15,7 +15,9 @@ export default function HomePage() {
   const [coordinates, setCoordinates] = useState(initialPosition);
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8080");
+    const socket = new WebSocket(
+      "wss://websocketa-52220f631af2.herokuapp.com/",
+    );
 
     socket.onopen = () => {
       console.log("WebSocket connection established");
@@ -52,17 +54,13 @@ export default function HomePage() {
           </code>
         </p>
         <APIProvider apiKey="AIzaSyAHHlDxmXhdeZeIlyMePQYsrC1F3lCzzFw">
-          <div style={{ height: "100vh", width: "100%" }}>
+          <div style={{ height: "80vh", width: "80%" }}>
             <Map center={coordinates} mapId={"2e7eb039b63b7c61"}>
               <AdvancedMarker
                 position={coordinates}
                 onClick={() => setOpen(true)}
               >
-                <Pin
-                  background={"grey"}
-                  borderColor={"green"}
-                  glyphColor={"purple"}
-                />
+                <img src="/assets/images/moto.png" width={40} height={40} />
               </AdvancedMarker>
 
               {open && (
