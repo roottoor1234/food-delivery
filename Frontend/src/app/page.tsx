@@ -53,7 +53,7 @@ export default function HomePage() {
         </p>
         <APIProvider apiKey="AIzaSyAHHlDxmXhdeZeIlyMePQYsrC1F3lCzzFw">
           <div style={{ height: "100vh", width: "100%" }}>
-            <Map zoom={15} center={coordinates} mapId={"2e7eb039b63b7c61"}>
+            <Map center={coordinates} mapId={"2e7eb039b63b7c61"}>
               <AdvancedMarker
                 position={coordinates}
                 onClick={() => setOpen(true)}
@@ -70,7 +70,7 @@ export default function HomePage() {
                   position={coordinates}
                   onCloseClick={() => setOpen(false)}
                 >
-                  <p style={{color:'black'}}>Delivery</p>
+                  <p style={{ color: "black" }}>Delivery</p>
                 </InfoWindow>
               )}
             </Map>
